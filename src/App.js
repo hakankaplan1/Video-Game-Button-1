@@ -3,6 +3,9 @@ import { useState } from "react";
 
 export default function App() {
   const [gameRunning, setGameRunning] = useState(false);
+  const handleClick = () => {
+    setGameRunning((pre) => !pre);
+  };
 
   /* Challenge
   
@@ -23,5 +26,11 @@ export default function App() {
              
         4. Bu görevleri doğru bir şekilde tamamlarsanız, butona tıkladığınızda bazı güzel görsel efektlere sahip olmalı ve çalışmamızın arka planı otomatik olarak açık mavi bir arka planla değiştirilmelidir.
 */
-  return <div></div>;
+  return (
+    <div>
+      <button className="video-game-button" onClick={handleClick}>
+        {gameRunning ? "Pause" : "Play"}
+      </button>
+    </div>
+  );
 }
